@@ -1,2 +1,2 @@
 # SoLiDWoT
-Research project aiming to use SoLiD in WoT
+Research project aiming to implement SoLiD for WoT
