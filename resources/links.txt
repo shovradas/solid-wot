@@ -1,0 +1,4 @@
+Initial Links:
+https://solid.mit.edu/
+https://solid.inrupt.com/
+https://solid.gitbook.io/solid-hacks/
