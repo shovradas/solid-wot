@@ -75,3 +75,10 @@ Related Seminar groups:
     http://emansour.com/research/meccano/solid_protocols.pdf
     https://solid.mit.edu
     https://www.researchgate.net/profile/Fundacion_Universitaria_San_Mateo/publication/324706357_Visualizing_security_principles_to_access_resources_based_on_Linked_Open_Data_Case_study_DBpedia/links/5ade4390458515c60f616a99/Visualizing-security-principles-to-access-resources-based-on-Linked-Open-Data-Case-study-DBpedia.pdf
+
+
+
+Others:
+https://linkeddata.github.io/rdflib.js/Documentation/turtle-intro.htmlhow to 
+
+https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html
