@@ -82,3 +82,13 @@ Others:
 https://linkeddata.github.io/rdflib.js/Documentation/turtle-intro.htmlhow to 
 
 https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html
+
+Used in slides:
+
+https://www.techopedia.com/definition/5613/web
+https://en.wikipedia.org/wiki/World_Wide_Web
+https://internetofthingsagenda.techtarget.com/definition/thing-in-the-Internet-of-Things
+https://www.techopedia.com/definition/26834/web-of-things-wot
+https://en.wikipedia.org/wiki/Web_of_Things#Architecture_and_framework
+https://webofthings.org/2017/04/08/what-is-the-web-of-things/
+https://www.techopedia.com/definition/5179/linked-data
