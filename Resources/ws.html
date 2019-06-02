@@ -1,0 +1,11 @@
+<script>    
+    var socket = new WebSocket('wss://localhost:8443/');
+    socket.onopen = function() {
+        this.send('sub https://user1.localhost:8443/public/data/sensor1.data.ttl');
+    };
+    socket.onmessage = function(msg) {
+        if (msg.data && msg.data.slice(0, 3) === 'pub') {
+            console.log(msg);            
+        }
+    };
+</script>

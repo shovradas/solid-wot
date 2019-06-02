@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/rdflib.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Home</h1>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">WebID</span> 
+                <input class="form-control" placeholder="WebId goes Here" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#sensorData"
+                aria-expanded="false" aria-controls="collapseExample">
+                Discover Devices
+            </button>
+        </div>
+        <hr/>
+        <div id="sensorData" class="collapse">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="alert alert-success" id="success-btn" role="alert" style="display: none;">Sensor ON
+                        Sucessfully!!</div>
+                    <div class="alert alert-warning" id="unsuccess-btn" role="alert" style="display: none;">Sensor OFF
+                        Sucessfully!!</div>
+                </div>
+
+            </div>
+            <div class="row">
+                <h3>Sensors</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <button type="button" id="sensor1Btn">
+
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <h4>Sensor 1</h4>
+                </div>
+                <div class="col-md-9">
+                    <label class="switch">
+                        <input type="checkbox" id="sensor1Check" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <button type="button" id="sensor2Btn">
+
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <h4>Sensor 2</h4>
+                </div>
+                <div class="col-md-9">
+                    <label class="switch">
+                        <input type="checkbox" id="sensor2Check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <button type="button" id="sensor3Btn">
+
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <h4>Sensor 3</h4>
+                </div>
+                <div class="col-md-9">
+                    <label class="switch">
+                        <input type="checkbox" id="sensor3Check" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var sensor1Val = $('#sensor1Check');
+        var sensor2Val = $('#sensor2Check');
+        var sensor3Val = $('#sensor3Check');
+        var sensor1Btn = $('#sensor1Btn');
+        var sensor2Btn = $('#sensor2Btn');
+        var sensor3Btn = $('#sensor3Btn');
+
+        var onOffSystem = function () {
+            if (sensor1Val.prop("checked") == true) {
+                sensor1Btn.removeClass("btn btn-danger");
+                sensor1Btn.addClass("btn btn-success");
+                sensor1Btn.html(' ');
+                sensor1Btn.html('ON');
+                console.log('Checked');
+            } else {
+                sensor1Btn.removeClass("btn btn-success");
+                sensor1Btn.addClass("btn btn-danger");
+                sensor1Btn.html(' ');
+                sensor1Btn.html('OFF');
+                console.log('Uncheck');
+            }
+            if (sensor2Val.prop("checked") == true) {
+                sensor2Btn.removeClass("btn btn-danger");
+                sensor2Btn.addClass("btn btn-success");
+                sensor2Btn.html(' ');
+                sensor2Btn.html('ON');
+                console.log('Checked');
+            } else {
+                sensor2Btn.removeClass("btn btn-success");
+                sensor2Btn.addClass("btn btn-danger");
+                sensor2Btn.html(' ');
+                sensor2Btn.html('OFF');
+                console.log('Uncheck');
+            }
+            if (sensor3Val.prop("checked") == true) {
+                sensor3Btn.removeClass("btn btn-danger");
+                sensor3Btn.addClass("btn btn-success");
+                sensor3Btn.html(' ');
+                sensor3Btn.html('ON');
+                console.log('Checked');
+            } else {
+                sensor3Btn.removeClass("btn btn-success");
+                sensor3Btn.addClass("btn btn-danger");
+                sensor3Btn.html(' ');
+                sensor3Btn.html('OFF');
+                console.log('Uncheck');
+            }
+        }
+        onOffSystem();
+        sensor1Val.change(function () {
+            onOffSystem();
+        });
+        sensor2Val.change(function () {
+            onOffSystem();
+        });
+        sensor3Val.change(function () {
+            onOffSystem();
+        });
+ // console.log(sensor1Val);
+ // console.log(sensor2Val);
+ // console.log(sensor3Val);
+    </script>
+
+    <script>        
+        // $.ajax({
+        //     method: "GET",
+        //     url: "https://device1.localhost:8443/public/device1.control.ttl",            
+        //     success: function(data) {
+        //         console.log(data);
+
+        //         let WOTTD = $rdf.Namespace("https://www.w3.org/2019/wot/td#");
+        //         var store = $rdf.graph()
+
+        //     },
+        //     error: function() { console.log("error") }
+        // });
+
+        var store = $rdf.graph();
+        var timeout = 5000;
+        var fetcher = new $rdf.Fetcher(store, timeout)
+
+        var url="https://device1.localhost:8443/public/device1.control.ttl"; 
+
+        fetcher.nowOrWhenFetched(url, function(ok, body, xhr) {
+            if (!ok) {
+                console.log("Oops, something happened and couldn't fetch data");
+            } else {
+                console.log(xhr);
+                
+                let WOTTD = $rdf.Namespace("https://www.w3.org/2019/wot/td#");
+                //let things = store.each($rdf.sym(url), WOTTD('thing'));
+                let things = store.each($rdf.sym(url));
+                //let thing = store.any($rdf.sym(url), null, 1);
+                console.log(things);
+                
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Device</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <script src="/js/jquery.min.js"></script>
+
+    <script>
+        let ws;
+        function startSocket() {
+            let url = 'localhost:11000';
+
+            if ("WebSocket" in window) {
+                ws = new WebSocket("ws://" + url, 'echo-protocol');
+                ws.onopen = function () {
+                    console.log("Connection open");
+                    ws.send("init");
+                };
+                ws.onmessage = function (e) {
+                    console.log(e.data); //{ id: 1, status: true };
+                    let msg = JSON.parse(e.data);
+
+                    let thing = msg.id == 1? $("#thing1"): $("#thing2");
+
+                    if (msg.status=="on"){
+                        thing.addClass("text-success");
+                        $("#switch" + msg.id).prop("checked", true);
+                    }                        
+                    else{
+                        thing.removeClass("text-success");
+                        $("#switch" + msg.id).prop("checked", false);
+                    }                        
+                };
+                ws.onclose = function () {
+                    console.log("Connection closed");
+                };
+            }
+        }
+        startSocket();
+    </script>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="card shadow">
+            <div class="card-header bg-danger">
+                <h3 class="h3 text-white">
+                    <i class="fab fa-raspberry-pi"></i> Raspberry Pi
+                </h3>
+            </div>
+
+            <!-- <div class="card-body border-bottom bg-light">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="device" value="https://device1.localhost:8443/profile/card#me" />
+                    </div>
+                    <span>&nbsp;</span>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="startSocket()">Connect As</button>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between">
+                    <i id="thing1" class="fas fa-lightbulb fa-6x"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="switch1">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between">
+                    <i id="thing2" class="fas fa-lightbulb fa-6x"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="switch2">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function () {
+            $("body").on("click", "#switch1", function () {
+                let swtch = $("#switch1").prop("checked");
+                let ins = '{"id":1, "status":' + (swtch?'"on"':'"off"') + '}';
+                let del = '{"id":1, "status":' + (swtch?'"off"':'"on"') + '}';
+                if(patchUpdate(del, ins)){                    
+                    let thing = $("#switch1").parent().parent().children(0);
+                    if(swtch)
+                        $(thing).addClass("text-success");
+                    else
+                        $(thing).removeClass("text-success");
+                }
+                
+            });
+            $("body").on("click", "#switch2", function () {
+                let swtch = $("#switch2").prop("checked");
+
+                let ins = '{"id":2, "status":' + (swtch?'"on"':'"off"') + '}';
+                let del = '{"id":2, "status":' + (swtch?'"off"':'"on"') + '}';
+
+                if(patchUpdate(del, ins)){
+                    let thing = $("#switch2").parent().parent().children(0);
+                    if(swtch)
+                        $(thing).addClass("text-success");
+                    else
+                        $(thing).removeClass("text-success");
+                }
+            });
+        });
+        
+        function patchUpdate(del, ins){
+            let data = 'DELETE DATA { <> <https://www.w3.org/2019/wot/td#thing> """' + del + '""" }; INSERT DATA { <> <https://www.w3.org/2019/wot/td#thing> """' + ins + '""" };';
+            console.log(data);
+            
+            $.ajax({
+                method: "PATCH",
+                url: "https://device1.localhost:8443/public/device1.control.ttl",
+                data: data,
+                contentType: "application/sparql-update",
+                success: function(data) {                    
+                    console.log(data);
+                    return true;
+                },
+                error: function(xhr) { 
+                    console.log(xhr.responseText);
+                    return false;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

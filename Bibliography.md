@@ -1,6 +1,6 @@
 # Bibliography
     
-# SoLiD
+## SoLiD
     https://solid.mit.edu/
     https://solid.inrupt.com/
     https://solid.gitbook.io/solid-hacks/
@@ -14,16 +14,16 @@
     Slide
     https://www.researchgate.net/publication/309312535_The_Solid_project_social_linked_data
 
-# WoT    
+## WoT    
     https://www.w3.org/TR/wot-architecture/
     Paper:
     https://arxiv.org/pdf/1804.05044.pdf
 
-# WoT+SoLiD
+## WoT+SoLiD
     http://harth.org/andreas/2018/iot-tutorial/
 
 
-Miscelaneous:
+## Miscelaneous:
     Presentation
     http://www.garrreynolds.com/Presentation/
 
@@ -33,7 +33,7 @@ Miscelaneous:
     https://vsr.informatik.tu-chemnitz.de/edu/2019/webe-seminar-ss/
 
 
-Related Seminar groups:
+## Related Seminar groups:
     Fragen: 111 - W3C SSN Description
     An overview of ontology
     Model the VSR WoT scenario using SSN ontology and identify missing concepts, properties.
@@ -78,7 +78,7 @@ Related Seminar groups:
 
 
 
-Others:
-https://linkeddata.github.io/rdflib.js/Documentation/turtle-intro.htmlhow to 
+## Others:
+    https://linkeddata.github.io/rdflib.js/Documentation/turtle-intro.htmlhow to 
 
-https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html
+    https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html
