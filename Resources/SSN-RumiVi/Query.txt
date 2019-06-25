@@ -1,0 +1,96 @@
+# Who Detects What?
+=======================================================
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+SELECT ?s ?o
+WHERE { ?s ssn:detects ?o }
+-------------------------------------------------------
+
+
+# What Tars can Detect?
+=======================================================
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX sh: <http://www.w3.org/ns/smart-House/>
+
+SELECT ?o2
+WHERE 
+{
+	sh:Robot ssn:hasSubSystem ?o1 .
+	?o1 ssn:detects ?o2 .
+}
+-------------------------------------------------------
+
+
+# Is there any Human?
+=======================================================
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX sh: <http://www.w3.org/ns/smart-House/>
+
+SELECT ?result
+WHERE 
+{
+	sh:Robot ssn:hasSubSystem ?sensor .
+	?sensor sosa:hasResult ?result .
+}
+
+# Who are they?
+=======================================================
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX sh: <http://www.w3.org/ns/smart-House/>
+
+SELECT ?object
+WHERE 
+{
+	sh:Robot ssn:hasSubSystem ?sensor .
+	?sensor ssn:detects ?object .
+}
+-------------------------------------------------------
+
+
+# Give me all the sensors' results?
+=======================================================
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX sh: <http://www.w3.org/ns/smart-House/>
+
+SELECT ?sensor ?result
+WHERE 
+{
+	sh:Smart_assistant sh:controls ?objects1 .
+	?objects1 ssn:hasSubSystem ?sensor .
+	?sensor sosa:hasResult ?result .
+}
+-------------------------------------------------------
+
+
+
+# All Individual?
+=======================================================
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?s ?o
+WHERE 
+{	
+	?s rdf:type owl:NamedIndividual .
+}
+-------------------------------------------------------
+
+
+# Individuals by class?
+=======================================================
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/smart-House/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+
+SELECT ?s
+WHERE 
+{	
+	#?s rdf:type ssn:System .
+	?s a ssn:System .
+}
+-------------------------------------------------------
+
