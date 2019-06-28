@@ -100,40 +100,18 @@
     <section>
     	<h3>2.3. SoLiD as the platform for WoT</h3>
     	<p>
-        Bei solchen hohen Nutzerzahlen haben beide Anbieter eine große Verantwortung bezüglich der Sicherheit der Daten. Dazu zählen natürlich angemessene
-        Datenschutzrichtlinien und Verschlüsselungstechniken, aber auch die Ermutigung und Aufklärung des Anwenders den eigenen Account so einbruchssicher wie
-        möglich zu gestalten. Dies beginnt schon bei der Registrierung, nämlich mit der Festlegung eines starken Passworts.
+        Researching about two different topic and implementing it as a one was a challenging tasks to us. Making the Web of Things work using SoLiD as platform for it. As we have mentioned earlier WoT architecture consists of four layers i.e (Accessibility Layer, Findability Layer, Sharing Layer , Composition Layer), SoliD provides us different facilities or resources to use it in every layer of WoT.
     	</p>
     	<p>
-        Beide Dienste weisen bei der Registrierung auf die Stärke des Passworts mit Hilfe eines Farbbalkens hin. Die Einstufung erhöht sich je länger die Eingabe
-        wird und je mehr zwischen Groß- und Kleinschreibung, Zahlen und Sonderzeichen variiert wird <a href="#r3">[3]</a>. Zusätzlich wird von beiden die zweistufige Verifizierung stark
-        empfohlen, bei der nicht nur Username und Passwort, sondern ein zusätzlicher Pin ans Handy gesendet wird, um sicherzustellen, dass es sich wirklich um
-        den bestimmten Nutzer handelt. Aber auch hier unterscheiden sich Google und Dropbox in den Details der Umsetzung. Während Dropbox diesen Code entweder per SMS verschickt
-        oder über eine App generieren lässt <a href="#r7">[7]</a>, bietet Google zusätzlich die Übermittlung per Sprachanruf und die Variante der Backup-Codes an <a href="#r8">[8]</a>. Letztere sind vor
-        allem nützlich, wenn das Smartphone bzw. der Empfang gerade nicht zur Hand ist.
+       	For accessing the Things (Accessibility Layer), we can use REST (Representational State Transfer) Interface. Similarly for finding or discovering things RDF (Resource Description Framework) and SPARQL. SPARQL is the language used for quering the RDF documents, RDF is specially used for writing semantic query for retrieving and manipulating the data which are stored in the RDF Format. Now, the Sharing of data (Sharing Layer), SoLiD provides us the POD(Personal Online Data), its the place where we can create, read, update and delete the data. And lastly, For Actuating things(Composition Layer), SoLid supports web socket which can be used for actuating the things and also  the SPARQL can be used in this layer in order to making some semantic queries over different datas. 
+       	<figure>
+        <img src="solidwot.jpg" alt="SoLid & WoT at a glance">
+        <figcaption>
+            <strong>Listing 2</strong>: SoLid & WoT at a glance
+        </figcaption>
+        </figure>
     	</p>
-    	<p>
-        Der nächste wichtige Sicherheitsaspekt ist die Übertragung der Daten. Diese findet bei beiden selbstverständlich über SSL/TSL und HTTPS statt. Danach
-        findet die serverseitige Verschlüsselung über AES-256 bei Dropbox <a href="#r7">[7]</a> und AES-128 bei Google <a href="#r8">[8]</a> statt. Beide verschlüsseln die Daten
-        jedoch mit eigenen generierten Schlüsseln, was zu der Kritik führt, dass „[s]ince Dropbox itself encrypts the data on the server-side, users cannot be sure
-        by cryptographic means that all stored data is highly confidential“ <a href="#r3">[3]</a>. Über Google ist die Kritik sogar noch lauter, denn hier wird
-        erst seit gut einem Jahr serverseitig verschlüsselt <a href="#r1">[1]</a>. Zuvor wiesen Mitarbeiter des GoogleDrive Team
-        nur auf die sichere Kommunikation zwischen Server und Client hin bzw. machten auf den Gebrauch der zwei-Schritt-Verifizierung aufmerksam <a href="#r1">[1]</a>. 
-    	Dass die Schlüssel jedoch selbst generiert und verwaltet werden, sorgt auch hier für Unwohlsein <a href="#r1">[1]</a>.
-    	</p>
-    	<p>
-        Aus diesem Problem hat sich ein ganz eigener Markt entwickelt. Dropbox selbst weist in ihrem Helpcenter auf „zahlreiche Drittanbieter“ <a href="#r7">[7]</a>
-        hin, mit Hilfe welcher Anwender ihre Daten selber verschlüsseln können, bevor sie diese in die Cloud hochladen. Auch Borgmann et al. kommen zu dem Schluss,
-        dass es „a whole range of alternative methods“<a href="#r3">[3]</a> gibt, um die eigenen Daten schon lokal zu verschlüsseln und selber die Schlüssel zu verwalten. Einer
-        dieser Anbieter ist Boxcryptor, 2011 gegründet und mit mittlerweile über 1 Millionen Downloads oft genutzt <a href="#r4">[4]</a>.
-    	</p>
-    	<p>
-        Boxcryptor ist eine Anwendung die speziell zur Verschlüsselung von Daten, welche anschließend in der Cloud gespeichert werden sollen, entwickelt wurde. Das
-        Prinzip ist recht simpel. Die zu verschlüsselnden Daten werden in einem entsprechenden Ordner auf einem virtuellen Laufwerk abgelegt und dort mit Hilfe der
-        AES-256 und RSA Algorithmen verschlüsselt. Danach erst werden die Dateien in den Cloud Ordner weitergegeben. Verschlüsselte Daten sind farblich markiert
-        und leicht von anderen, nicht verschlüsselten Daten, zu unterscheiden. Diese Software ist kompatibel mit allen großen Cloud Dienst Anbietern und allen Betriebssystemen. Auch für Android, iOS und
-        Blackberry gibt es Apps, sodass hier ebenfalls keine Einschränkung besteht <a href="#r4">[4]</a>.
-    	</p>
+
     </section>
 
 
