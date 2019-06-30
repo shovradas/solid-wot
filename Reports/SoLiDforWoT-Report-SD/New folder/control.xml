@@ -1,0 +1,16 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ex="https://example.org/vocab#"
+    xmlns="https://device.localhost:8443/profile/card/#"
+    xmlns:td="https://www.w3.org/2019/wot/td#" > 
+  <rdf:Description rdf:about="#">
+    <td:thing rdf:resource="#1"/>
+    <td:thing rdf:resource="#2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#1">
+    <ex:status>on</ex:status>
+  </rdf:Description>
+  <rdf:Description rdf:about="#2">
+    <ex:status>off</ex:status>
+  </rdf:Description>
+</rdf:RDF>

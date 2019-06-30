@@ -1,0 +1,15 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="https://myhome/device/#"
+    xmlns:td="https://www.w3.org/2019/wot/td#" > 
+  <rdf:Description rdf:about="#">
+    <td:thing rdf:resource="#1"/>
+    <td:thing rdf:resource="#2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#1">
+    <hasStatus>on</hasStatus>
+  </rdf:Description>
+  <rdf:Description rdf:about="#2">
+    <hasStatus>on</hasStatus>
+  </rdf:Description>
+</rdf:RDF>
