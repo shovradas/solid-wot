@@ -1,1 +1,5 @@
 sd/
+Prototype/controller/node_modules
+Prototype/controller/.vscode
+Prototype/client/node_modules
+Prototype/node-solid-server/node_modules

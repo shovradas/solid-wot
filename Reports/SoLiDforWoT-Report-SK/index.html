@@ -24,20 +24,13 @@
     <section>
     	<h2>1. Introduction</h2>
         <p> 
-    		In den letzten Jahren hat die Beliebtheit und damit auch das Angebot von Cloud-Diensten stark zugenommen. Die Gründe dafür sind vielseitig, so wirken die
-        steigende Tendenz zur Nutzung mehrerer mobiler Endgeräte, ebenso wie die Mobilität des Arbeitsortes sich positiv auf diesen Trend aus. Zusätzlich
-        vergrößert sich im digitalen Zeitalter der für Medien beanspruchte Speicherplatz rapide.
+    		Making a simple everday objects smart by connecting it through the web is not new to us now, we can find many smart devices in our surrounding from small light bulb to big screen TV. Web Decentralization  is also the hot topic now, no any private firms or centrally located server should use your data for their potential advantage, user must have control over their data, they should only have the rights to give the permission to others to access their data but this is not the case nowadays. Many big tech firms are collecting the users data and using them for the financial benefits.   
     	</p>
     	<p>
-    		Doch gerade in den letzten Jahren steigt zeitgleich auch das Bewusstsein für Datenschutz und Privatsphäre im Netz. Dies stellt die Anbieter von Cloud Diensten
-        zum einen vor die Herausforderung eine ansprechende Menge an Speicherplatz günstig bereitzustellen und gleichzeitig die Daten der Kunden ausreichend vor unbefugtem
-        Zugriff zu schützen. Dazu zählen natürlich Maßnahmen für die sichere Übertragung von Daten, sowie die Verschlüsselung bei Ablage auf den Servern. Aber auch
-        die Authentifizierung des Nutzers spielt eine wichtige Rolle, vor allem weil hier der Anwender selbst aktiv werden kann.
+    		Above we introduced two different things one Web of Things(Smart devices) other Web Decentralization. Our whole report focuses on these two topics. We will be discussing about Web Of Things and for Web Decentralization we will be discussing about the Social Linked Data(SoLiD). SoLiD is a Web Decentralization project led by the creator of Web Tim Berners Lee. In simple words, Web of things is something where everyday objects is connected with the Web.  
     	</p>
     	<p>
-    		Zwei solcher Anbieter sind Dropbox und GoogleDrive. Im Folgenden werden diese beiden hinsichtlich ihres Angebots und Sicherheitsaspekten analysiert. Als
-        zusätzliche Verschlüsselungssoftware wird Boxcryptor und als alternative Lösung BittorrentSync vorgestellt. Zum Schluss wird auf die Option sich eine eigene Cloud mittels ownCloud zu bauen eingegangen, sowie 
-    	das Ergebnis dessen präsentiert.
+    		Further more, we did some research about these topic and tried to implement the SoLiD as the platform for the WoT. Although Wot is now widely used, SoLiD is relatively new topic and there are very few research and work done to bring these two topics(WoT and SoLiD) together and implement to produce some output. Here, we have tried our best to bring two topics together and prepared the demo as well which we will be discussing further. 
     	</p>
     </section>
     
@@ -48,59 +41,29 @@
     	<h3> 2.1. Web of Things </h3>
     		
     	<p>
-        Die Attraktivität, Daten in der Cloud zu speichern, ergibt sich in der Regel aus mindestens einer der folgenden Funktionsmöglichkeiten. Grundlegende Idee ist
-        die Möglichkeit eine Kopie einer lokal gespeicherten Datei zu erstellen und durch Speichern in der Cloud diese Datei von überall abrufen zu können. Wenn
-        dieser Zugriff nun von mehreren Geräten aus geschieht, ergibt sich daraus die Notwendigkeit der Synchronisation von solchen Daten, sodass diese immer auf dem
-        aktuellsten Stand sind. Des Weiteren ist das Teilen von Daten und die variable Rechtevergabe eine wichtige Cloud-Funktion. Auch hier wird wieder die Synchronisation
-        zu einem wichtigen Thema, vor allem wenn es um Team- oder Projektarbeiten geht. Zu guter Letzt wird gerne auf die Option des Backups zurückgegriffen. Hier werden
-        über einen längeren Zeitraum immer wieder Kopien von Dateien erstellt, welche dann die verschiedenen Versionen innerhalb eines Entwicklungsprozesses
-        darstellen und die Möglichkeit zur Wiederherstellung älterer Versionen bieten <a href="#r3">[3]</a>.
+       		For the deatil understandings of Web Of Things, Lets break it into two parts, i.e. Web and Things. 
+       		Starting with the web.<b>The Web</b> is the common name for the World Wide Web, a subset of the Internet consisting of the pages that can be accessed by a Web browser.<a href="#r1">[1]</a>Before doing some research in this topic we had a common dis belief that web and the internet are the same things where both the terms we used interchangeably. But now, we came to know that both are not same. Internet is the physical network, the infrastructure or the global networks of networks whereas the web is the application layer on top of internet. Web is the collection of many documents(resources) where each resource is identified by URL(Uniform Resource Locator). We can also say that Web is the logical network working on top of internet.     
     	</p>
     	<p>
-        Einer der bekanntesten Anbieter und mit über 300 Millionen registrierten Nutzern <a href="#r7">[7]</a> 
-    	ist Dropbox. Als dieser Dienst 2008 online ging, stand zuerst die einfache Verwaltung von Daten unabhängig vom persönlichen Standort im Vordergrund <a href="#r7">[7]</a>. Mittlerweile wurden weitere
-        Funktionen hinzugefügt. Als kostenloser Speicher stehen 2GB zur Verfügung, mit der zusätzlichen Option zur Erweiterung auf bis zu 16GB. Außerdem beinhaltet das
-        Leistungsspektrum die Möglichkeit Dateien und Ordner zu teilen, Offline zu bearbeiten und ältere Versionen wiederherzustellen. Es gibt mehrere
-        Wege, diese Optionen zu nutzen. Angefangen über ein leicht bedienbares Webinterface im Browser gibt es außerdem Clients für Windows, MacOS und
-        Linux. Für Smartphone und Tablet stehen außerdem Apps für die Betriebssysteme Blackberry, iOs und Android zur Verfügung <a href="#r7">[7]</a>.
+        <b>The things</b> in Web Of Things refers to anything that has connection to the internaet and is able to send and recieve data over some predefined protocols. The things is typically a computing device. For an everyday object to be qualified as a thing, there are some typical criterias to be fulfilled which are listed below.<br><br>
+				− Identification and information storage (RFID tags, MAC address)<br>
+				− Information collection (Sensor networks, store sensor values)<br>
+				− Information processing (Understanding commands, filtering data)<br>
+				− Communications (Transmit and receive messages),<br>
+				− Actuation (Switch control, motor control)
+        
     	</p>
     	<p>
-        Als einer der Marktführer bei Internetdienstleistungen bietet Google.Inc ebenfalls einen Cloud Service an. Dieser entwickelte sich aus der Anwendung
-        GoogleDocs und ging 2012 online. Laut eigenen Angaben benutzen über 190 Millionen Anwender diesen bereitgestellten und in die Vielzahl von eigenen
-        Anwendungen integrierten Service <a href="#r8">[8]</a>. Der kostenfreie Speicherplatz ist
-        um einiges größer als der von Dropbox, nämlich 15GB. Neben den bereits erläuterten Standardfunktionen wie Synchronisation und Offline Bearbeitung gibt es
-        zusätzlich beim Teilen die Möglichkeit die Rechte der Dritten zu definieren. Außerdem wird durch die Integration der anderen Google Dienste, wie
-        beispielsweise Gmail, Google+ oder Picasa Webalben, das Speichern bestimmter Daten in der Cloud vereinfacht. So kann zum Beispiel ein Dokument im Anhang
-        einer Email direkt in GoogleDrive abgelegt werden <a href="#r8">[8]</a>. Die Nutzung des Dienstes ist auch hier sowohl über den Browser, als auch über Clients für alle PC 
-    	Betriebssysteme oder Apps für mobile Geräte möglich. 
+        As a whole, <b>The Web of Things (WoT)</b> is a computing concept that describes a future where everyday objects are fully integrated with the Web.<a href="#r2">[2]</a>. Here, we will not be developing any new kind of communication mechanism between things and the web, the existing protocols and system will be used for the communication<a href="#r2">[2]</a>. Basically WoT architecture consist of Four layers. <br><br>
+        		-Accessibility Layer (Deals with the access of things to the Internet)<br>
+        		-Findability Layer (To provide a way to find and locate things on the Web)<br>
+        		-Sharing Layer (Deals with the idea of things pushing data to the Web)<br>
+        		-Composition Layer (Integrates the services and data offered by things into higher level Web tools)
     	</p>	
         <figure>
-        <pre>
-function createAndSendDocument() {
-  // Create a new Google Doc named 'Hello, world!'
-  var doc = DocumentApp.create('Hello, world!');
-
-  // Access the body of the document, then add a paragraph.
-  doc.getBody().appendParagraph('This document was created ');
-
-  // Get the URL of the document.
-  var url = doc.getUrl();
-
-  // Get the email address of the active user - that's you.
-  var email = Session.getActiveUser().getEmail();
-
-  // Get the name of the document to use as an email subject line.
-  var subject = doc.getName();
-
-  // Append a new string to the "url" variable to use as an email.
-  var body = 'Link to your doc: ' + url;
-
-  // Send yourself an email with a link to the document.
-  GmailApp.sendEmail(email, subject, body);
-}
-        </pre>
+        <img src="4layer.jpg" alt="Different Layer Of WoT">
         <figcaption>
-            <strong>Listing 1</strong>: Beispiel Google Script: Spreadsheet erstellen und Link per Mail senden <a href="#r7">[7]</a>
+            <strong>Listing 1</strong>: Different Layer Of WoT
         
         </figcaption>
         </figure>
@@ -108,39 +71,30 @@ function createAndSendDocument() {
     <section>
     	<h3>2.2. SoLiD Ecosystem</h3>
     	<p>
-        Bei solchen hohen Nutzerzahlen haben beide Anbieter eine große Verantwortung bezüglich der Sicherheit der Daten. Dazu zählen natürlich angemessene
-        Datenschutzrichtlinien und Verschlüsselungstechniken, aber auch die Ermutigung und Aufklärung des Anwenders den eigenen Account so einbruchssicher wie
-        möglich zu gestalten. Dies beginnt schon bei der Registrierung, nämlich mit der Festlegung eines starken Passworts.
-    	</p>
+        As mentioned earlier, <b>SoLiD</b> is a Web Decentralization project led by the creator of Web Tim Berners Lee. <b>Decentralized Web</b> is the Web runs across a number of machines that are owned by regular users rather than owned in a central place like a server. In simple words, decentralized web is the web that we are using it today but the individual user's will be having full control of their data rather than relying on any centralized server. 
+        <p>
+        <b>Linked Data</b> is a structured data where different data are interlinked. Linked data are described based on some semantic vocabularies. Linked data can be accessed through semantic queries. The data that are found over the web is also linked with anchor tags with other data, we were confused at the begining that why those type of data are not called link data since it was linked, the main difference between the Linked data we are talking about here and the data linked by the anchor tags is that the accessing of data using semantic queries. The data found over the web linked through anchor tags cannot be accessed using the semantic queries.<a href="#r3">[3]</a> 
+        </p>
+
     	<p>
-        Beide Dienste weisen bei der Registrierung auf die Stärke des Passworts mit Hilfe eines Farbbalkens hin. Die Einstufung erhöht sich je länger die Eingabe
-        wird und je mehr zwischen Groß- und Kleinschreibung, Zahlen und Sonderzeichen variiert wird <a href="#r3">[3]</a>. Zusätzlich wird von beiden die zweistufige Verifizierung stark
-        empfohlen, bei der nicht nur Username und Passwort, sondern ein zusätzlicher Pin ans Handy gesendet wird, um sicherzustellen, dass es sich wirklich um
-        den bestimmten Nutzer handelt. Aber auch hier unterscheiden sich Google und Dropbox in den Details der Umsetzung. Während Dropbox diesen Code entweder per SMS verschickt
-        oder über eine App generieren lässt <a href="#r7">[7]</a>, bietet Google zusätzlich die Übermittlung per Sprachanruf und die Variante der Backup-Codes an <a href="#r8">[8]</a>. Letztere sind vor
-        allem nützlich, wenn das Smartphone bzw. der Empfang gerade nicht zur Hand ist.
-    	</p>
-    	<p>
-        Der nächste wichtige Sicherheitsaspekt ist die Übertragung der Daten. Diese findet bei beiden selbstverständlich über SSL/TSL und HTTPS statt. Danach
-        findet die serverseitige Verschlüsselung über AES-256 bei Dropbox <a href="#r7">[7]</a> und AES-128 bei Google <a href="#r8">[8]</a> statt. Beide verschlüsseln die Daten
-        jedoch mit eigenen generierten Schlüsseln, was zu der Kritik führt, dass „[s]ince Dropbox itself encrypts the data on the server-side, users cannot be sure
-        by cryptographic means that all stored data is highly confidential“ <a href="#r3">[3]</a>. Über Google ist die Kritik sogar noch lauter, denn hier wird
-        erst seit gut einem Jahr serverseitig verschlüsselt <a href="#r1">[1]</a>. Zuvor wiesen Mitarbeiter des GoogleDrive Team
-        nur auf die sichere Kommunikation zwischen Server und Client hin bzw. machten auf den Gebrauch der zwei-Schritt-Verifizierung aufmerksam <a href="#r1">[1]</a>. 
-    	Dass die Schlüssel jedoch selbst generiert und verwaltet werden, sorgt auch hier für Unwohlsein <a href="#r1">[1]</a>.
-    	</p>
-    	<p>
-        Aus diesem Problem hat sich ein ganz eigener Markt entwickelt. Dropbox selbst weist in ihrem Helpcenter auf „zahlreiche Drittanbieter“ <a href="#r7">[7]</a>
-        hin, mit Hilfe welcher Anwender ihre Daten selber verschlüsseln können, bevor sie diese in die Cloud hochladen. Auch Borgmann et al. kommen zu dem Schluss,
-        dass es „a whole range of alternative methods“<a href="#r3">[3]</a> gibt, um die eigenen Daten schon lokal zu verschlüsseln und selber die Schlüssel zu verwalten. Einer
-        dieser Anbieter ist Boxcryptor, 2011 gegründet und mit mittlerweile über 1 Millionen Downloads oft genutzt <a href="#r4">[4]</a>.
-    	</p>
-    	<p>
-        Boxcryptor ist eine Anwendung die speziell zur Verschlüsselung von Daten, welche anschließend in der Cloud gespeichert werden sollen, entwickelt wurde. Das
-        Prinzip ist recht simpel. Die zu verschlüsselnden Daten werden in einem entsprechenden Ordner auf einem virtuellen Laufwerk abgelegt und dort mit Hilfe der
-        AES-256 und RSA Algorithmen verschlüsselt. Danach erst werden die Dateien in den Cloud Ordner weitergegeben. Verschlüsselte Daten sind farblich markiert
-        und leicht von anderen, nicht verschlüsselten Daten, zu unterscheiden. Diese Software ist kompatibel mit allen großen Cloud Dienst Anbietern und allen Betriebssystemen. Auch für Android, iOS und
-        Blackberry gibt es Apps, sodass hier ebenfalls keine Einschränkung besteht <a href="#r4">[4]</a>.
+    	<b>Solid </b>(derived from "social linked data") is a proposed set of conventions and tools for building decentralized Web applications based on Linked Data principles.<a href="#r4">[4]</a>Today’s web applications is centralized for a variety of reasons. User data became the source of power and income for many big companies.<a href="#r5">[5]</a>  Lets take an example of facebook. User uploads photo, they like and dislike the different items. There are many ways where the user is providing their personal data to facebook, and facebook is using those data to target the Ads based on the data accumulated from ther user. Facebook is earning huge revenue just by accumulating users data. So, to overcome these problem SoLiD is the solution. SoLid provides POD(Personal Online Data) which is simply a folder where the user can store their data and have full control over it, Users decides for which application or user to give what type of permission to acces the POD. Below are the list of SoLiD Specification.	
+    		<pre>
+  	• Identity (WebId)
+	• Profiles
+		− WebID Profile Documents
+	• Authentication
+		− Primary Authentication: WebID-TLS
+		− Alternative Authentication Mechanisms
+		− Secondary Authentication: Account Recovery
+	• Authorization and Access Control
+		− Web Access Control
+	• Content Representation
+		− RDF in the form of JSON-LD, Turtle, HTML+RDFa, etc
+	• Reading and Writing Resources
+		− HTTPS REST API
+		− WebSockets API
+	• Social Web App Protocols 
+    		</pre>
     	</p>
     </section>
     <section>
@@ -336,11 +290,11 @@ function createAndSendDocument() {
     <!--6-->
 	<section class="references">
 	   		<h2>6. Bibliography</h2>
-    		<p class="reference" id="r1">[1] Barth, Dave (2013, August 13). Google Cloud Storage now provides server-side encryption [Online]. Available: <a href="http://googlecloudplatform.blogspot.de/2013/08/google-cloud-storage-now-provides.html">http://googlecloudplatform.blogspot.de/2013/08/google-cloud-storage-now-provides.html</a> (28.06.2014)</p>
-    		<p class="reference" id="r2">[2] BitTorrent Sync [Online]. Available: <a href="http://www.bittorentsync.com">http://www.bittorentsync.com</a> (29.06.2014)</p>
-    		<p class="reference" id="r3">[3] Borgmann, Moritz et al. "On the Security of Cloud Storage". Fraunhofer Gesellschaft SIT. Darmstadt. SIT Technical Reports. SIT-TR-2012-001.  March 2012</p>
-    		<p class="reference" id="r4">[4] Boxcryptor [Online]. Available: <a href="http://www.boxcrypotr.com">http://www.boxcryptor.com</a> (29.06.2014)</p>
-    		<p class="reference" id="r5">[5] Connect.de. So Installieren Sie ownCloud auf einem Raspberry Pi [Online]. Available <a href="http://www.connect.de/ratgeber/so-installieren-sie-owncloud-auf-einem-raspberry-pi-1540246.html">http://www.connect.de/ratgeber/so-installieren-sie-owncloud-auf-einem-raspberry-pi-1540246.html</a> (29.06.2014)</p>
+    		<p class="reference" id="r1">[1] . What is the Web? - Definition from Techopedia. Available: <a href="https://www.techopedia.com/definition/5613/web">https://www.techopedia.com/definition/5613/web</a> (25.06.2019)</p>
+    		<p class="reference" id="r2">[2] What is the Web of Things (WoT)? - Definition from Techopedia <a href="https://www.techopedia.com/definition/26834/web-of-things-wot">https://www.techopedia.com/definition/26834/web-of-things-wot</a> (21.06.2019)</p>
+    		<p class="reference" id="r3">[3] Data - W3C<a href="https://www.w3.org/standards/semanticweb/data">https://www.w3.org/standards/semanticweb/data</a> (21.06.2019)</p>
+    		<p class="reference" id="r4">[4] solid/solid: Solid - Re-decentralizing the web (project directory) <a href="https://github.com/solid/solid">https://github.com/solid/solid</a> (22.06.2019)</p>
+    		<p class="reference" id="r5">[5] An introduction to SOLID, Tim Berners-Lee’s new, re-decentralized Webinterface [Online]. Available <a href="https://www.freecodecamp.org/news/an-introduction-to-solid-tim-berners-lees-new-re-decentralized-web-25d6b78c523b/">https://www.freecodecamp.org/news/an-introduction-to-solid-tim-berners-lees-new-re-decentralized-web-25d6b78c523b/</a> (22.06.2019)</p>
     		<p class="reference" id="r6">[6] Donauer, Jürgen  (2013, December 18). Die Cloud Alternative für Linux: Bittorrent Sync [Online]. Available: <a href="http://www.pcwelt.de/ratgeber/Die_Cloud_Alternative_fuer_Linux__Bittorrent_Sync-Datenaustausch_uebers_Internet-8345539.html">http://www.pcwelt.de/ratgeber/Die_Cloud_Alternative_fuer_Linux__Bittorrent_Sync-Datenaustausch_uebers_Internet-8345539.html</a> (29.06.2014)</p>
     		<p class="reference" id="r7">[7] Dropbox [Online]. Available: <a href="http://www.driobox.com">http://www.dropbox.com</a> (29.06.2014)</p>
     		<p class="reference" id="r8"> [8] Google Drive [Online]. Available: <a href="http://www.drive.google.com">http://drive.google.com</a> (29.06.2014)</p>

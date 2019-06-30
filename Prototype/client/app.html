@@ -26,8 +26,8 @@
                 <table id="things" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Thing</th>
-                            <th>Status</th>
+                            <th class="text-center">Thing</th>
+                            <th class="text-center">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,8 +63,8 @@
                             let thing = JSON.parse(things[i].value);
                             let str = "";
                             str += '<tr>';
-                            str += '<td>' + thing.id + '</td>';
-                            str += '<td><input type="button" class="btn '+ (thing.status=='on'? 'btn-success': 'btn-danger') +'" onclick="patchUpdate(this, '+ thing.id +')" value="' + thing.status + '"/></td>';
+                            str += '<td class="text-center">' + thing.id + '</td>';
+                            str += '<td class="text-center"><input type="button" class="btn '+ (thing.status=='on'? 'btn-success': 'btn-danger') +'" onclick="patchUpdate(this, '+ thing.id +')" value="' + thing.status + '"/></td>';
                             str += '</tr>';
                             $("#things tbody").append(str);
                         }
